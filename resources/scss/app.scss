@@ -1,1 +1,265 @@
 @import '~bootstrap/scss/bootstrap';
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.small {
+    font-size: 7px;
+    position: relative;
+    bottom: 6px;
+}
+
+header {
+    height: 100px;
+
+    .logo {
+        height: 50%;
+        margin: 10px 0;
+
+        img {
+            height: 100%;
+        }
+    }
+
+    .col-12 {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        align-items: center;
+
+        li {
+            padding: 30px 10px;
+
+            a {
+                text-decoration: none;
+                color: #000;
+                font-size: 14px;
+                text-transform: uppercase;
+                padding-bottom: 50px;
+                font-weight: 600;
+
+                &:hover {
+                    color: #0282F9;
+                    border-bottom: 5px solid #0282F9;
+                }
+            }
+
+
+        }
+    }
+
+    .active {
+        color: #0282F9;
+        border-bottom: 5px solid #0282F9;
+    }
+
+
+    .search {
+        padding: 30px 10px;
+
+        .border_blue {
+            border-bottom: 3px solid #0282F9;
+            vertical-align: middle;
+
+            input {
+                border: none;
+                text-align: end;
+                margin-right: 5px;
+                font-weight: 600;
+            }
+        }
+
+    }
+}
+
+.jumbo {
+    background-image: url("../images/jumbotron.jpg");
+    height: 500px;
+    margin-top: 5px;
+    background-size: cover;
+    position: relative;
+
+}
+
+.current {
+    color: white;
+    background-color: #0282F9;
+    position: absolute;
+    padding: 10px 20px;
+    font-weight: 700;
+    bottom: -20px;
+}
+
+main {
+    img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .title {
+        color: white;
+        text-transform: uppercase;
+        margin: 10px 0 20px 0;
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+
+    .bg_black {
+        background-color: #000;
+        padding: 50px;
+
+        button {
+            color: white;
+            background-color: #0282F9;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 15px 50px;
+            margin: auto;
+            width: 20%;
+        }
+
+    }
+
+}
+
+.bg_blue {
+    background-color: #0282F9;
+
+    ul {
+        display: flex;
+        list-style: none;
+        align-items: center;
+        width: 100%;
+        padding: 40px 0;
+        margin: 0;
+
+        li {
+            width: calc(100% / 5);
+
+            a {
+                text-decoration: none;
+                color: white;
+
+                display: flex;
+                align-items: center;
+
+                img {
+                    height: 50px;
+                    margin: 0 10px;
+                }
+
+                span {
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+
+    }
+}
+
+.comic_img {
+    position: absolute;
+    top: 400px;
+    left: 350px;
+
+    img {
+        width: 200px;
+    }
+}
+
+.bg_blu {
+    height: 80px;
+    background-color: #0282F9;
+    width: 100%;
+}
+
+.bg_green {
+    background-color: rgb(58, 183, 58);
+    border: 1px solid black;
+    font-weight: 600;
+}
+
+.text_green {
+    color: rgb(116, 248, 116);
+}
+
+footer {
+    .bg_img {
+        background-image: url('../images/footer-bg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 10px 0;
+
+        .text_white {
+            color: #fff;
+            margin: 25px 0;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 20px;
+            margin-right: 50px;
+            padding: 0;
+
+            li {
+                padding: 5px 0;
+
+                a {
+                    text-decoration: none;
+                    color: grey;
+
+                }
+            }
+        }
+
+        .col-12 {
+            display: flex;
+            background-image: url('../resources/images/dc-logo-bg.png');
+            background-position: right;
+            background-repeat: no-repeat;
+
+        }
+
+    }
+
+    .bg_grey {
+        background-color: rgb(71, 71, 71);
+        padding: 20px 0;
+
+        .row {
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        button {
+            border: 2px solid #0282F9;
+            color: white;
+            padding: 5px;
+            background-color: transparent;
+        }
+
+        .text_right {
+
+            span {
+                margin-right: 15px;
+                color: #0282F9;
+            }
+
+            a {
+                vertical-align: middle;
+                margin: 0 5px;
+            }
+        }
+    }
+}
