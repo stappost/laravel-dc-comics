@@ -27,7 +27,7 @@
                             </a>
                         </li>
                         <li class="uppercase ">
-                            <a href="{{ route('comics') }}"
+                            <a href="{{ route('comics.index') }}"
                                 class="{{ Route::currentRouteName() === 'comics' ? 'active' : '' }}">
                                 comics
                             </a>
