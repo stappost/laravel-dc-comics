@@ -67,7 +67,6 @@ class ComicController extends Controller
     public function show(comic $comic)
     {
         
-        dd($comic['arts']);
         $comic['arts'] = explode(',', $comic['arts']);
         $comic['writers'] = explode(',', $comic['writers']);
         return view('details', compact('comic'));
@@ -81,7 +80,7 @@ class ComicController extends Controller
      */
     public function edit(comic $comic)
     {
-        //
+        return view('edit', compact('comic'));
     }
 
     /**
@@ -93,7 +92,23 @@ class ComicController extends Controller
      */
     public function update(Request $request, comic $comic)
     {
-        //
+        $form_data = $request->all();
+
+        $comic->title = $form_data['title'];
+        $comic->description = $form_data['description'];
+        $comic->thumb = $form_data['thumb'];
+        $comic->series = $form_data['series'];
+        $comic->type = $form_data['type'];
+        $comic->price = $form_data['price'];
+        $comic->sale_date = $form_data['sale_date'];
+        $form_data['writers'] = json_encode($form_data['writers']);
+        $comic->writers = $form_data['writers'];
+        $form_data['arts'] = json_encode($form_data['arts']);
+        $comic->arts = $form_data['arts'];
+
+        $comic->update();
+        
+        return redirect()->route('comics.show', ['comic' => $comic]);
     }
 
     /**

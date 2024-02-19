@@ -29,6 +29,10 @@
                 <div class="text-end text-secondary mt-5 fw-bold"> ADVERTISEMENT</div>
                 <img src="{{ Vite::asset('resources/images/adv.jpg') }}" alt="" class="w-100 h-75">
             </div>
+            <div class="col-12 text-end mb-5">
+                <a href="{{ route('comics.edit', ['comic' => $comic]) }}" class="btn btn-sm btn-primary">MODIFY
+                    COMIC</a>
+            </div>
         </div>
     </div>
     <div class="bg-light py-5">
