@@ -25,7 +25,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
@@ -36,7 +36,26 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $form_data = $request->all();
+
+        $comic = new Comic();
+        $comic->title = $form_data['title'];
+        $comic->description = $form_data['description'];
+        $comic->thumb = $form_data['thumb'];
+        $comic->series = $form_data['series'];
+        $comic->type = $form_data['type'];
+        $comic->price = $form_data['price'];
+        $comic->sale_date = $form_data['sale_date'];
+        $form_data['writers'] = json_encode($form_data['writers']);
+        $comic->writers = $form_data['writers'];
+        $form_data['arts'] = json_encode($form_data['arts']);
+        $comic->arts = $form_data['arts'];
+
+        $comic->save();
+        
+
+
+        return redirect()->route('comics.index', ['comic' => $comic]);
     }
 
     /**
@@ -47,8 +66,10 @@ class ComicController extends Controller
      */
     public function show(comic $comic)
     {
-        $comic['arts'] = json_decode($comic['arts']);
-        $comic['writers'] = json_decode($comic['writers']);
+        
+        dd($comic['arts']);
+        $comic['arts'] = explode(',', $comic['arts']);
+        $comic['writers'] = explode(',', $comic['writers']);
         return view('details', compact('comic'));
     }
 
