@@ -35,18 +35,26 @@
         <div class="container">
             <div class="row">
                 <div class="col-6">
-                    <h3 class="border-bottom border-secondary me-3">Talent</h3>
+                    <h3 class="border-bottom border-secondary me-3 pb-5">Talent</h3>
                     <div class="d-flex border-bottom border-secondary me-3 justify-content-between">
                         <p>Art by:</p>
-                        <p>nomi</p>
+                        <p class="w-50">
+                            @foreach ($comic['arts'] as $art)
+                                <a href="">{{ $art }},</a>
+                            @endforeach
+                        </p>
                     </div>
                     <div class="d-flex border-bottom border-secondary me-3 justify-content-between">
                         <p>Written by:</p>
-                        <p>nomi</p>
+                        <p class="w-50">
+                            @foreach ($comic['writers'] as $writer)
+                                <a href="">{{ $writer }},</a>
+                            @endforeach
+                        </p>
                     </div>
                 </div>
                 <div class="col-6">
-                    <h3 class="border-bottom border-secondary">Specs</h3>
+                    <h3 class="border-bottom border-secondary pb-5">Specs</h3>
                     <div class="d-flex border-bottom border-secondary me-3 justify-content-between">
                         <p>Series:</p>
                         <p class="text-primary text-uppercase">{{ $comic['type'] }}</p>
