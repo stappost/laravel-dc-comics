@@ -23,7 +23,9 @@
                             </div>
                         </div>
                     @endforeach
-                    <button>LOAD MORE</button>
+                    <div class="col-12 d-flex justify-content-center">
+                        <button>LOAD MORE</button>
+                    </div>
                 </div>
 
             </div>
