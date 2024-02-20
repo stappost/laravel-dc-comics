@@ -32,7 +32,8 @@
             <div class="col-12 text-end mb-5">
                 <a href="{{ route('comics.edit', ['comic' => $comic]) }}" class="btn btn-sm btn-primary">MODIFY
                     COMIC</a>
-                <form action="{{ route('comics.destroy', ['comic' => $comic]) }}" method="post">
+                <form action="{{ route('comics.destroy', ['comic' => $comic]) }}" method="post"
+                    onsubmit="return confirm('Sei sicuro di voler cancellare questo Comic')">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-sm btn-danger mt-3">Delete</button>
