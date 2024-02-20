@@ -5,6 +5,11 @@
         <div class="row">
             <div class="col-12 my-4">
                 <h3>Aggiungi un nuovo fumetto</h3>
+                @if ($errors->any())
+                    @foreach ($errors->all() as $error)
+                        <div>{{ $error }}</div>
+                    @endforeach
+                @endif
                 <form action="{{ route('comics.store') }}" method="post">
                     @csrf
 
